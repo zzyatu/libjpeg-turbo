@@ -15,11 +15,11 @@
  */
 
 #define JPEG_INTERNALS
-#include "../../jinclude.h"
-#include "../../jpeglib.h"
-#include "../../jsimd.h"
-#include "../../jdct.h"
-#include "../../jsimddct.h"
+#include "jinclude.h"
+#include "jpeglib.h"
+#include "jsimd.h"
+#include "jdct.h"
+#include "jsimddct.h"
 #include "../jsimd.h"
 #include "jconfigint.h"
 

@@ -7,6 +7,8 @@ macro(simd_fail message)
   endif()
 endmacro()
 
+include_directories(../libjpeg_api)
+
 
 ###############################################################################
 # x86[-64] (NASM)
@@ -92,15 +94,15 @@ message(STATUS "CMAKE_ASM_NASM_FLAGS = ${EFFECTIVE_ASM_NASM_FLAGS}")
 set(CMAKE_ASM_NASM_FLAGS "${CMAKE_ASM_NASM_FLAGS} -I\"${CMAKE_CURRENT_SOURCE_DIR}/nasm/\" -I\"${CMAKE_CURRENT_SOURCE_DIR}/${CPU_TYPE}/\"")
 
 if(WIN32)
-  set(CMAKE_ASM_NASM_FLAGS "${CMAKE_ASM_NASM_FLAGS} -I\"${CMAKE_CURRENT_SOURCE_DIR}/../win/\"")
-  set(JSIMDCFG_INC ${CMAKE_CURRENT_SOURCE_DIR}/../win/jsimdcfg.inc)
+  set(CMAKE_ASM_NASM_FLAGS "${CMAKE_ASM_NASM_FLAGS} -I\"${CMAKE_CURRENT_SOURCE_DIR}/win/\"")
+  set(JSIMDCFG_INC ${CMAKE_CURRENT_SOURCE_DIR}/win/jsimdcfg.inc)
 else()
   set(GREP grep)
   if(CMAKE_SYSTEM_NAME STREQUAL "SunOS")
     set(GREP ggrep)
   endif()
   add_custom_command(OUTPUT jsimdcfg.inc
-    COMMAND ${CMAKE_C_COMPILER} -E -I${CMAKE_BINARY_DIR} -I${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/jsimdcfg.inc.h | ${GREP} -E '^[\;%]|^\ %' | sed 's%_cpp_protection_%%' | sed 's@% define@%define@g' >jsimdcfg.inc)
+    COMMAND ${CMAKE_C_COMPILER} -E -I${CMAKE_BINARY_DIR} -I${CMAKE_CURRENT_BINARY_DIR} -I${CMAKE_SOURCE_DIR}/libjpeg_api ${CMAKE_CURRENT_SOURCE_DIR}/jsimdcfg.inc.h | ${GREP} -E '^[\;%]|^\ %' | sed 's%_cpp_protection_%%' | sed 's@% define@%define@g' >jsimdcfg.inc)
   set(JSIMDCFG_INC ${CMAKE_CURRENT_BINARY_DIR}/jsimdcfg.inc)
   set(CMAKE_ASM_NASM_FLAGS "${CMAKE_ASM_NASM_FLAGS} -I\"${CMAKE_CURRENT_BINARY_DIR}/\"")
 endif()

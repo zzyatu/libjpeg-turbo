@@ -479,17 +479,6 @@ if(UNIX AND NOT APPLE)
   endif()
 endif()
 
-# Generate files
-if(WIN32)
-  configure_file(win/jconfig.h.in jconfig.h)
-else()
-  configure_file(jconfig.h.in jconfig.h)
-endif()
-configure_file(jconfigint.h.in jconfigint.h)
-if(UNIX)
-  configure_file(libjpeg.map.in libjpeg.map)
-endif()
-
 # Include directories and compiler definitions
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -529,123 +518,18 @@ if(WITH_SIMD)
     set_source_files_properties(${SIMD_OBJS} PROPERTIES GENERATED 1)
   endif()
 else()
-  add_library(simd OBJECT jsimd_none.c)
+  add_library(simd OBJECT libjpeg_api/jsimd_none.c)
 endif()
 
 if(WITH_JAVA)
   add_subdirectory(java)
 endif()
 
-if(ENABLE_SHARED)
-  add_subdirectory(sharedlib)
-endif()
-
-if(ENABLE_STATIC)
-  add_library(jpeg-static STATIC ${JPEG_SOURCES} $<TARGET_OBJECTS:simd>
-    ${SIMD_OBJS})
-  if(NOT MSVC)
-    set_target_properties(jpeg-static PROPERTIES OUTPUT_NAME jpeg)
-  endif()
-endif()
+add_subdirectory(libjpeg_api)
 
 if(WITH_TURBOJPEG)
-  if(ENABLE_SHARED)
-    set(TURBOJPEG_SOURCES ${JPEG_SOURCES} $<TARGET_OBJECTS:simd> ${SIMD_OBJS}
-      turbojpeg.c transupp.c jdatadst-tj.c jdatasrc-tj.c rdbmp.c rdppm.c
-      wrbmp.c wrppm.c)
-    set(TJMAPFILE ${CMAKE_CURRENT_SOURCE_DIR}/turbojpeg-mapfile)
-    if(WITH_JAVA)
-      set(TURBOJPEG_SOURCES ${TURBOJPEG_SOURCES} turbojpeg-jni.c)
-      include_directories(${JAVA_INCLUDE_PATH} ${JAVA_INCLUDE_PATH2})
-      set(TJMAPFILE ${CMAKE_CURRENT_SOURCE_DIR}/turbojpeg-mapfile.jni)
-    endif()
-    add_library(turbojpeg SHARED ${TURBOJPEG_SOURCES})
-    set_property(TARGET turbojpeg PROPERTY COMPILE_FLAGS
-      "-DBMP_SUPPORTED -DPPM_SUPPORTED")
-    if(WIN32)
-      set_target_properties(turbojpeg PROPERTIES DEFINE_SYMBOL DLLDEFINE)
-    endif()
-    if(MINGW)
-      set_target_properties(turbojpeg PROPERTIES LINK_FLAGS -Wl,--kill-at)
-    endif()
-    if(APPLE)
-      if(NOT CMAKE_SHARED_LIBRARY_RUNTIME_C_FLAG)
-        set(CMAKE_SHARED_LIBRARY_RUNTIME_C_FLAG "-Wl,-rpath,")
-      endif()
-      set_target_properties(turbojpeg PROPERTIES MACOSX_RPATH 1)
-    endif()
-    set_target_properties(turbojpeg PROPERTIES
-      SOVERSION ${TURBOJPEG_SO_MAJOR_VERSION} VERSION ${TURBOJPEG_SO_VERSION})
-    if(TJMAPFLAG)
-      set_target_properties(turbojpeg PROPERTIES
-        LINK_FLAGS "${TJMAPFLAG}${TJMAPFILE}")
-    endif()
-
-    add_executable(tjunittest tjunittest.c tjutil.c md5/md5.c md5/md5hl.c)
-    target_link_libraries(tjunittest turbojpeg)
-
-    add_executable(tjbench tjbench.c tjutil.c)
-    target_link_libraries(tjbench turbojpeg)
-    if(UNIX)
-      target_link_libraries(tjbench m)
-    endif()
-
-    add_executable(tjexample tjexample.c)
-    target_link_libraries(tjexample turbojpeg)
-  endif()
-
-  if(ENABLE_STATIC)
-    add_library(turbojpeg-static STATIC ${JPEG_SOURCES} $<TARGET_OBJECTS:simd>
-      ${SIMD_OBJS} turbojpeg.c transupp.c jdatadst-tj.c jdatasrc-tj.c rdbmp.c
-      rdppm.c wrbmp.c wrppm.c)
-    set_property(TARGET turbojpeg-static PROPERTY COMPILE_FLAGS
-      "-DBMP_SUPPORTED -DPPM_SUPPORTED")
-    if(NOT MSVC)
-      set_target_properties(turbojpeg-static PROPERTIES OUTPUT_NAME turbojpeg)
-    endif()
-
-    add_executable(tjunittest-static tjunittest.c tjutil.c md5/md5.c
-      md5/md5hl.c)
-    target_link_libraries(tjunittest-static turbojpeg-static)
-
-    add_executable(tjbench-static tjbench.c tjutil.c)
-    target_link_libraries(tjbench-static turbojpeg-static)
-    if(UNIX)
-      target_link_libraries(tjbench-static m)
-    endif()
-  endif()
+  add_subdirectory(turbojpeg_api)
 endif()
-
-if(WIN32)
-  set(USE_SETMODE "-DUSE_SETMODE")
-endif()
-if(WITH_12BIT)
-  set(COMPILE_FLAGS "-DGIF_SUPPORTED -DPPM_SUPPORTED ${USE_SETMODE}")
-else()
-  set(COMPILE_FLAGS "-DBMP_SUPPORTED -DGIF_SUPPORTED -DPPM_SUPPORTED -DTARGA_SUPPORTED ${USE_SETMODE}")
-  set(CJPEG_BMP_SOURCES rdbmp.c rdtarga.c)
-  set(DJPEG_BMP_SOURCES wrbmp.c wrtarga.c)
-endif()
-
-if(ENABLE_STATIC)
-  add_executable(cjpeg-static cjpeg.c cdjpeg.c rdgif.c rdppm.c rdswitch.c
-    ${CJPEG_BMP_SOURCES})
-  set_property(TARGET cjpeg-static PROPERTY COMPILE_FLAGS ${COMPILE_FLAGS})
-  target_link_libraries(cjpeg-static jpeg-static)
-
-  add_executable(djpeg-static djpeg.c cdjpeg.c rdcolmap.c rdswitch.c wrgif.c
-    wrppm.c ${DJPEG_BMP_SOURCES})
-  set_property(TARGET djpeg-static PROPERTY COMPILE_FLAGS ${COMPILE_FLAGS})
-  target_link_libraries(djpeg-static jpeg-static)
-
-  add_executable(jpegtran-static jpegtran.c cdjpeg.c rdswitch.c transupp.c)
-  target_link_libraries(jpegtran-static jpeg-static)
-  set_property(TARGET jpegtran-static PROPERTY COMPILE_FLAGS "${USE_SETMODE}")
-endif()
-
-add_executable(rdjpgcom rdjpgcom.c)
-
-add_executable(wrjpgcom wrjpgcom.c)
 
 
 ###############################################################################
@@ -1256,124 +1140,10 @@ endforeach()
 add_custom_target(testclean COMMAND ${CMAKE_COMMAND} -P
   ${CMAKE_CURRENT_SOURCE_DIR}/cmakescripts/testclean.cmake)
 
-if(WITH_TURBOJPEG)
-  configure_file(tjbenchtest.in tjbenchtest @ONLY)
-  configure_file(tjexampletest.in tjexampletest @ONLY)
-  if(WIN32)
-    set(BASH bash)
-  endif()
-  if(WITH_JAVA)
-    configure_file(tjbenchtest.java.in tjbenchtest.java @ONLY)
-    configure_file(tjexampletest.java.in tjexampletest.java @ONLY)
-    add_custom_target(tjtest
-      COMMAND echo tjbenchtest
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest
-      COMMAND echo tjbenchtest -alloc
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest -alloc
-      COMMAND echo tjbenchtest -yuv
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest -yuv
-      COMMAND echo tjbenchtest -yuv -alloc
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest -yuv -alloc
-      COMMAND echo tjbenchtest -progressive
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest -progressive
-      COMMAND echo tjexampletest
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjexampletest
-      COMMAND echo tjbenchtest.java
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest.java
-      COMMAND echo tjbenchtest.java -yuv
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest.java -yuv
-      COMMAND echo tjbenchtest.java -progressive
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest.java -progressive
-      COMMAND echo tjexampletest.java
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjexampletest.java
-      DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest
-        ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest.java
-        ${CMAKE_CURRENT_BINARY_DIR}/tjexampletest)
-  else()
-    add_custom_target(tjtest
-      COMMAND echo tjbenchtest
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest
-      COMMAND echo tjbenchtest -alloc
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest -alloc
-      COMMAND echo tjbenchtest -yuv
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest -yuv
-      COMMAND echo tjbenchtest -yuv -alloc
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest -yuv -alloc
-      COMMAND echo tjexampletest
-      COMMAND ${BASH} ${CMAKE_CURRENT_BINARY_DIR}/tjexampletest
-      DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/tjbenchtest)
-  endif()
-endif()
-
 
 ###############################################################################
 # INSTALLATION
 ###############################################################################
-
-if(WIN32)
-  set(EXE ".exe")
-endif()
-
-if(WITH_TURBOJPEG)
-  if(ENABLE_SHARED)
-    install(TARGETS turbojpeg tjbench
-      ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-      LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-      RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
-  endif()
-  if(ENABLE_STATIC)
-    install(TARGETS turbojpeg-static ARCHIVE
-      DESTINATION ${CMAKE_INSTALL_LIBDIR})
-    if(NOT ENABLE_SHARED)
-      install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/tjbench-static${EXE}
-        DESTINATION ${CMAKE_INSTALL_BINDIR} RENAME tjbench${EXE})
-    endif()
-  endif()
-  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/turbojpeg.h
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-endif()
-
-if(ENABLE_STATIC)
-  install(TARGETS jpeg-static ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
-  if(NOT ENABLE_SHARED)
-    install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/cjpeg-static${EXE}
-      DESTINATION ${CMAKE_INSTALL_BINDIR} RENAME cjpeg${EXE})
-    install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/djpeg-static${EXE}
-      DESTINATION ${CMAKE_INSTALL_BINDIR} RENAME djpeg${EXE})
-    install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/jpegtran-static${EXE}
-      DESTINATION ${CMAKE_INSTALL_BINDIR} RENAME jpegtran${EXE})
-  endif()
-endif()
-
-install(TARGETS rdjpgcom wrjpgcom RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
-
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/README.ijg
-  ${CMAKE_CURRENT_SOURCE_DIR}/README.md ${CMAKE_CURRENT_SOURCE_DIR}/example.txt
-  ${CMAKE_CURRENT_SOURCE_DIR}/tjexample.c
-  ${CMAKE_CURRENT_SOURCE_DIR}/libjpeg.txt
-  ${CMAKE_CURRENT_SOURCE_DIR}/structure.txt
-  ${CMAKE_CURRENT_SOURCE_DIR}/usage.txt ${CMAKE_CURRENT_SOURCE_DIR}/wizard.txt
-  ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.md DESTINATION ${CMAKE_INSTALL_DOCDIR})
-if(WITH_JAVA)
-  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/java/TJExample.java
-    DESTINATION ${CMAKE_INSTALL_DOCDIR})
-endif()
-
-if(UNIX OR MINGW)
-  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cjpeg.1
-    ${CMAKE_CURRENT_SOURCE_DIR}/djpeg.1 ${CMAKE_CURRENT_SOURCE_DIR}/jpegtran.1
-    ${CMAKE_CURRENT_SOURCE_DIR}/rdjpgcom.1
-    ${CMAKE_CURRENT_SOURCE_DIR}/wrjpgcom.1
-    DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pkgscripts/libjpeg.pc
-    ${CMAKE_CURRENT_BINARY_DIR}/pkgscripts/libturbojpeg.pc
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
-endif()
-
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/jconfig.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/jerror.h ${CMAKE_CURRENT_SOURCE_DIR}/jmorecfg.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/jpeglib.h
-  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
 include(cmakescripts/BuildPackages.cmake)
 
@@ -1381,3 +1151,6 @@ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmakescripts/cmake_uninstall.cmake.i
   "cmake_uninstall.cmake" IMMEDIATE @ONLY)
 
 add_custom_target(uninstall COMMAND ${CMAKE_COMMAND} -P cmake_uninstall.cmake)
+
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/README.md
+  ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.md DESTINATION ${CMAKE_INSTALL_DOCDIR})

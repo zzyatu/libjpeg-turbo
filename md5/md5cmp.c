@@ -29,7 +29,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "./md5.h"
-#include "../tjutil.h"
+#include "tjutil.h"
 
 int main(int argc, char *argv[])
 {
