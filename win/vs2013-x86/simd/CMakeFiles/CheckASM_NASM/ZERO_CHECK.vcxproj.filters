@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\simd\CMakeFiles\CheckASM_NASM\CMakeFiles\e586f718b77d96b44e710b5b4011f178\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{2A8E1781-D6AA-3140-87E4-3629E21F19D4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

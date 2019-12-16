@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C2A62DC5-5DB1-392C-A440-ED15C072ED4B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\ALL_BUILD.dir\nasm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work\3lib\libjpeg-turbo\win\vs2013-x86;D:\work\3lib\libjpeg-turbo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work\3lib\libjpeg-turbo\win\vs2013-x86;D:\work\3lib\libjpeg-turbo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work\3lib\libjpeg-turbo\win\vs2013-x86;D:\work\3lib\libjpeg-turbo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\work\3lib\libjpeg-turbo\win\vs2013-x86;D:\work\3lib\libjpeg-turbo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/work/3lib/libjpeg-turbo/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+D:\Program\cmake-3.15.4-win64-x64\bin\cmake.exe -SD:/work/3lib/libjpeg-turbo -BD:/work/3lib/libjpeg-turbo/win/vs2013-x86 --check-stamp-file D:/work/3lib/libjpeg-turbo/win/vs2013-x86/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeCInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeCommonLanguageInclude.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeGenericSystem.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeInitializeConfigs.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeLanguageInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeRCInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeSystemSpecificInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckCSourceCompiles.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckIncludeFile.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckIncludeFileCXX.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckIncludeFiles.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckTypeSize.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Compiler\MSVC-C.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\Windows-MSVC-C.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\Windows-MSVC.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\Windows.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\WindowsPaths.cmake;D:\work\3lib\libjpeg-turbo\cmakescripts\BuildPackages.cmake;D:\work\3lib\libjpeg-turbo\cmakescripts\GNUInstallDirs.cmake;D:\work\3lib\libjpeg-turbo\cmakescripts\cmake_uninstall.cmake.in;D:\work\3lib\libjpeg-turbo\jconfigint.h.in;D:\work\3lib\libjpeg-turbo\release\installer.nsi.in;D:\work\3lib\libjpeg-turbo\release\libjpeg.pc.in;D:\work\3lib\libjpeg-turbo\release\libturbojpeg.pc.in;D:\work\3lib\libjpeg-turbo\release\maketarball.in;D:\work\3lib\libjpeg-turbo\win\jconfig.h.in;D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\3.15.4\CMakeCCompiler.cmake;D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\3.15.4\CMakeRCCompiler.cmake;D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\3.15.4\CMakeSystem.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Templates\MSBuild\nasm.props.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/work/3lib/libjpeg-turbo/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+D:\Program\cmake-3.15.4-win64-x64\bin\cmake.exe -SD:/work/3lib/libjpeg-turbo -BD:/work/3lib/libjpeg-turbo/win/vs2013-x86 --check-stamp-file D:/work/3lib/libjpeg-turbo/win/vs2013-x86/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeCInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeCommonLanguageInclude.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeGenericSystem.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeInitializeConfigs.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeLanguageInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeRCInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeSystemSpecificInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckCSourceCompiles.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckIncludeFile.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckIncludeFileCXX.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckIncludeFiles.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckTypeSize.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Compiler\MSVC-C.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\Windows-MSVC-C.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\Windows-MSVC.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\Windows.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\WindowsPaths.cmake;D:\work\3lib\libjpeg-turbo\cmakescripts\BuildPackages.cmake;D:\work\3lib\libjpeg-turbo\cmakescripts\GNUInstallDirs.cmake;D:\work\3lib\libjpeg-turbo\cmakescripts\cmake_uninstall.cmake.in;D:\work\3lib\libjpeg-turbo\jconfigint.h.in;D:\work\3lib\libjpeg-turbo\release\installer.nsi.in;D:\work\3lib\libjpeg-turbo\release\libjpeg.pc.in;D:\work\3lib\libjpeg-turbo\release\libturbojpeg.pc.in;D:\work\3lib\libjpeg-turbo\release\maketarball.in;D:\work\3lib\libjpeg-turbo\win\jconfig.h.in;D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\3.15.4\CMakeCCompiler.cmake;D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\3.15.4\CMakeRCCompiler.cmake;D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\3.15.4\CMakeSystem.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Templates\MSBuild\nasm.props.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/work/3lib/libjpeg-turbo/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+D:\Program\cmake-3.15.4-win64-x64\bin\cmake.exe -SD:/work/3lib/libjpeg-turbo -BD:/work/3lib/libjpeg-turbo/win/vs2013-x86 --check-stamp-file D:/work/3lib/libjpeg-turbo/win/vs2013-x86/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeCInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeCommonLanguageInclude.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeGenericSystem.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeInitializeConfigs.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeLanguageInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeRCInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeSystemSpecificInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckCSourceCompiles.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckIncludeFile.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckIncludeFileCXX.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckIncludeFiles.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckTypeSize.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Compiler\MSVC-C.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\Windows-MSVC-C.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\Windows-MSVC.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\Windows.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\WindowsPaths.cmake;D:\work\3lib\libjpeg-turbo\cmakescripts\BuildPackages.cmake;D:\work\3lib\libjpeg-turbo\cmakescripts\GNUInstallDirs.cmake;D:\work\3lib\libjpeg-turbo\cmakescripts\cmake_uninstall.cmake.in;D:\work\3lib\libjpeg-turbo\jconfigint.h.in;D:\work\3lib\libjpeg-turbo\release\installer.nsi.in;D:\work\3lib\libjpeg-turbo\release\libjpeg.pc.in;D:\work\3lib\libjpeg-turbo\release\libturbojpeg.pc.in;D:\work\3lib\libjpeg-turbo\release\maketarball.in;D:\work\3lib\libjpeg-turbo\win\jconfig.h.in;D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\3.15.4\CMakeCCompiler.cmake;D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\3.15.4\CMakeRCCompiler.cmake;D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\3.15.4\CMakeSystem.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Templates\MSBuild\nasm.props.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/work/3lib/libjpeg-turbo/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+D:\Program\cmake-3.15.4-win64-x64\bin\cmake.exe -SD:/work/3lib/libjpeg-turbo -BD:/work/3lib/libjpeg-turbo/win/vs2013-x86 --check-stamp-file D:/work/3lib/libjpeg-turbo/win/vs2013-x86/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeCInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeCommonLanguageInclude.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeGenericSystem.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeInitializeConfigs.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeLanguageInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeRCInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeSystemSpecificInformation.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckCSourceCompiles.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckIncludeFile.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckIncludeFileCXX.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckIncludeFiles.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\CheckTypeSize.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Compiler\MSVC-C.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\Windows-MSVC-C.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\Windows-MSVC.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\Windows.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Modules\Platform\WindowsPaths.cmake;D:\work\3lib\libjpeg-turbo\cmakescripts\BuildPackages.cmake;D:\work\3lib\libjpeg-turbo\cmakescripts\GNUInstallDirs.cmake;D:\work\3lib\libjpeg-turbo\cmakescripts\cmake_uninstall.cmake.in;D:\work\3lib\libjpeg-turbo\jconfigint.h.in;D:\work\3lib\libjpeg-turbo\release\installer.nsi.in;D:\work\3lib\libjpeg-turbo\release\libjpeg.pc.in;D:\work\3lib\libjpeg-turbo\release\libturbojpeg.pc.in;D:\work\3lib\libjpeg-turbo\release\maketarball.in;D:\work\3lib\libjpeg-turbo\win\jconfig.h.in;D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\3.15.4\CMakeCCompiler.cmake;D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\3.15.4\CMakeRCCompiler.cmake;D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\3.15.4\CMakeSystem.cmake;D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Templates\MSBuild\nasm.props.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\ZERO_CHECK.vcxproj">
+      <Project>{24EF4DF7-1EF8-3A77-B4FD-423AEF6CA270}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\sharedlib\cjpeg.vcxproj">
+      <Project>{F4731A63-F9D2-3A84-AB6B-FEEA7E22B3F6}</Project>
+      <Name>cjpeg</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\cjpeg-static.vcxproj">
+      <Project>{692C4557-2C99-3C30-BF8D-57B6337121F9}</Project>
+      <Name>cjpeg-static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\sharedlib\djpeg.vcxproj">
+      <Project>{948474E6-64CE-3A18-B989-F125D657387F}</Project>
+      <Name>djpeg</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\djpeg-static.vcxproj">
+      <Project>{BD8F1965-1532-3C44-BC90-1526C992BFE1}</Project>
+      <Name>djpeg-static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\sharedlib\jcstest.vcxproj">
+      <Project>{279DBA2B-D4BA-36CB-B430-513F4C0E2320}</Project>
+      <Name>jcstest</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\sharedlib\jpeg.vcxproj">
+      <Project>{7CA8FD66-DF32-3B70-9D13-15A96F5BDEFE}</Project>
+      <Name>jpeg</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\jpeg-static.vcxproj">
+      <Project>{55ED56A0-EA30-3262-B673-73311787B91D}</Project>
+      <Name>jpeg-static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\sharedlib\jpegtran.vcxproj">
+      <Project>{7A30EC1B-D666-32B2-B57C-2FAA931E43FA}</Project>
+      <Name>jpegtran</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\jpegtran-static.vcxproj">
+      <Project>{779BC1CF-F29F-3735-8D33-0B8C52AED941}</Project>
+      <Name>jpegtran-static</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\md5\md5cmp.vcxproj">
+      <Project>{1FA71AA8-65AC-32DC-B99D-17918C59515F}</Project>
+      <Name>md5cmp</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\rdjpgcom.vcxproj">
+      <Project>{34790B9E-385C-350D-9B01-9896FED5B2E6}</Project>
+      <Name>rdjpgcom</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\simd\simd.vcxproj">
+      <Project>{CEAA912A-5486-3F6F-ABEB-958C212A02A7}</Project>
+      <Name>simd</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\wrjpgcom.vcxproj">
+      <Project>{9F7B54E6-62E6-3794-A5E0-F100311FD15A}</Project>
+      <Name>wrjpgcom</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="D:\Program\cmake-3.15.4-win64-x64\share\cmake-3.15\Templates\MSBuild\nasm.targets" />
+  </ImportGroup>
+</Project>

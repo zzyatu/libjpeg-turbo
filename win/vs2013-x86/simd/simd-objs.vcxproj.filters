@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jsimdcpu.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jfdctflt-3dn.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jidctflt-3dn.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jquant-3dn.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jccolor-mmx.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jcgray-mmx.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jcsample-mmx.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jdcolor-mmx.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jdmerge-mmx.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jdsample-mmx.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jfdctfst-mmx.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jfdctint-mmx.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jidctfst-mmx.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jidctint-mmx.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jidctred-mmx.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jquant-mmx.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jfdctflt-sse.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jidctflt-sse.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jquant-sse.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jccolor-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jcgray-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jchuff-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jcphuff-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jcsample-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jdcolor-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jdmerge-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jdsample-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jfdctfst-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jfdctint-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jidctflt-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jidctfst-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jidctint-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jidctred-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jquantf-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jquanti-sse2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jccolor-avx2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jcgray-avx2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jcsample-avx2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jdcolor-avx2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jdmerge-avx2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jdsample-avx2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jfdctint-avx2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jidctint-avx2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\b6b433eaf1dcb5abe13207d01473e067\jquanti-avx2.asm.obj.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\CMakeFiles\089e08bab4f99c301404bbe3d93be3d0\simd-objs.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\work\3lib\libjpeg-turbo\simd\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\work\3lib\libjpeg-turbo\win\vs2013-x86\simd\CMakeFiles\simd-objs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{62A41441-2833-3D1A-81DD-70E1CE1A045B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
